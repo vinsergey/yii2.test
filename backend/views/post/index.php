@@ -9,6 +9,14 @@ use yii\helpers\Url;
 
 echo \yii\helpers\Html::a('Create', \yii\helpers\Url::toRoute('/post/create'));
 
+?>
+
+    <div class="send">
+        <p>Some text</p>
+    </div>
+
+<?php
+
 $dataProvider = new ActiveDataProvider([
     'query' => $posts,
     'pagination' => [

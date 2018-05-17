@@ -25,7 +25,7 @@ class PostController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'edit', 'create', 'delete', 'index'],
+                        'actions' => ['logout', 'edit', 'create', 'delete', 'test', 'index'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -98,5 +98,11 @@ class PostController extends Controller
         return $this->render('edit', [
             'model' => $model,
         ]);
+    }
+
+    public function actionTest(){
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $posts = Post::find()->all();
+        return ['posts' =>$posts ];
     }
 }
